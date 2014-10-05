@@ -1,0 +1,34 @@
+\ProvidesPackage{sty/math}
+
+% caracteres de letras curveadas
+\RequirePackage{mathrsfs}
+
+% Ecuaciones, matrices, fuentes y demás
+\RequirePackage{amsmath}
+
+% Algunos simbolos relacionales y fuentes especiales
+\RequirePackage{amssymb}
+
+% Estructura de teoremas y pruebas
+\RequirePackage{amsthm}
+
+% Derivadas, diferenciales, definición matemática de funciones 
+% y delimitadores laterales (\abs, \norm, etc)
+\RequirePackage{commath}
+
+% Seno
+\newcommand{\sen}[0]{\mathrm{sen}}
+
+%% Dirac's notation stuff
+
+% Para usar bra-kets
+\RequirePackage{braket}
+% outer product
+
+\newcommand{\ketbra}[2]{\ket{#1}\!\bra{#2}}
+% density matrix of a pure state
+\newcommand{\density}[1]{\ketbra{#1}{#1}}
+\newcommand{\prom}[1]{\langle{#1}\rangle}
+\newcommand{\matrixel}[3]{\bra{#1}{#2}\ket{#3}}
+
+\endinput

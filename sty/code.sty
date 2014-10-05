@@ -1,0 +1,48 @@
+\ProvidesPackage{sty/code}
+
+% Para incluir código de programación
+\RequirePackage{listings}
+\RequirePackage{color}
+
+% Diferentes tonalidades de gris
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+
+% Opciones
+\lstset{
+  frame=Ltb,
+  framerule=0pt,
+  aboveskip=0.5cm,
+  framextopmargin=3pt,
+  framexbottommargin=3pt,
+  framexleftmargin=0.4cm,
+  framesep=0pt,
+  rulesep=.4pt,
+  backgroundcolor=\color{gray97},
+  rulesepcolor=\color{black},
+  % Resalta los espacios en blanco en las cadenas
+  showstringspaces = true,
+  columns=fullflexible,
+  basicstyle=\ttfamily,
+  stringstyle=\color{orange},
+  commentstyle=\color{gray45},
+  keywordstyle=\bfseries\color{green!40!black},
+  % 
+  numbers=left,
+  numbersep=15pt,
+  numberstyle=\tiny,
+  numberfirstline = false,
+  breaklines=true,
+}
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+% Estilos definidos
+\lstdefinestyle{AutoLisp}{language=[Auto]Lisp}
+\lstdefinestyle{C}{language=[ANSI]C}
+\lstdefinestyle{Python}{language=Python}
+\lstdefinestyle{Gnuplot}{language=Gnuplot}
+
+\endinput
