@@ -63,7 +63,7 @@ tramp
 *.rel
 
 # AUCTeX auto folder
-/auto/
+auto/
 
 ### Other ###
 *.pdf
