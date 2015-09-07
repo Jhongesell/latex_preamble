@@ -58,11 +58,15 @@
 }
 
 % Empty Karnaugh map 4x4
-\newenvironment{Karnaugh}%
+% El nombre de las variables ahora se pasa como argumento
+%  \begin{Karnaugh}{$A_1A_0$}{$B_1B_0$}
+%  ...
+%  \end{Karnaugh}
+\newenvironment{Karnaugh}[2]%
 {
   \begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
     \draw (0,0) grid (4,4);
-    \draw (0,4) -- node [pos=0.7,above right,anchor=south west] {cd} node [pos=0.7,below left,anchor=north east] {ab} ++(135:1);
+    \draw (0,4) -- node [pos=0.8,above right,anchor=south west] {#2} node [pos=0.7,below left,anchor=north east] {#1} ++(135:1.20);
     % 
     \matrix (mapa) [matrix of nodes,
     column sep={0.8cm,between origins},
@@ -84,11 +88,13 @@
 }
 
 % Empty Karnaugh map 2x4
-\newenvironment{Karnaughvuit}%
+%  \begin{Karnaughvuit}{A}{BC}
+%  \end{Karnaughvuit}
+\newenvironment{Karnaughvuit}[2]%
 {
   \begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
     \draw (0,0) grid (4,2);
-    \draw (0,2) -- node [pos=0.7,above right,anchor=south west] {bc} node [pos=0.7,below left,anchor=north east] {a} ++(135:1);
+    \draw (0,2) -- node [pos=0.7,above right,anchor=south west] {#2} node [pos=0.7,below left,anchor=north east] {#1} ++(135:1.2);
     % 
     \matrix (mapa) [matrix of nodes,
     column sep={0.8cm,between origins},
@@ -108,11 +114,11 @@
 }
 
 % Empty Karnaugh map 2x2
-\newenvironment{Karnaughquatre}%
+\newenvironment{Karnaughquatre}[2]%
 {
   \begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
     \draw (0,0) grid (2,2);
-    \draw (0,2) -- node [pos=0.7,above right,anchor=south west] {b} node [pos=0.7,below left,anchor=north east] {a} ++(135:1);
+    \draw (0,2) -- node [pos=0.7,above right,anchor=south west] {#2} node [pos=0.7,below left,anchor=north east] {#1} ++(135:1);
     % 
     \matrix (mapa) [matrix of nodes,
     column sep={0.8cm,between origins},
