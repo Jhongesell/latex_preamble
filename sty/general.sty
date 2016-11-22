@@ -1,37 +1,44 @@
 \ProvidesPackage{sty/general}
 
+% Permite requerir un paquete solo si existe
+\newcommand*\RequirePackageIfPresent[2][]{%
+  \IfFileExists{#2.sty}{
+    \RequirePackage[#1]{#2}
+  }{\PackageWarning{\@currname}{Cannot find package #2}}%
+}
+
 % Reseteo de numeración en pies de página
 \RequirePackage{perpage}
 \MakePerPage{footnote}
 
 % Para arreglar los gráficos dentro de itemize
-\RequirePackage[justification=centering]{caption}
+\RequirePackageIfPresent[justification=centering]{caption}
 
 % Para separar correctamente las palabras
-\RequirePackage[spanish]{babel}
+\RequirePackageIfPresent[spanish]{babel}
 
 % Este paquete permite poner acentos y eñes usando codificación utf-8
-\RequirePackage[utf8]{inputenc}
+\RequirePackageIfPresent[utf8]{inputenc}
 
 % Lista numerada
 \RequirePackage{enumerate}
 
 % Para referencias cruzadas
-\RequirePackage{hyperref}
+\RequirePackageIfPresent{hyperref}
 
 % Para incluir imagenes
-\RequirePackage{graphicx}
+\RequirePackageIfPresent{graphicx}
 
 % Para utilizar subfiguras
-\RequirePackage{subcaption}
+\RequirePackageIfPresent{subcaption}
 
 % Imágenes tikz con gnuplot (puede requerir recompilado de gnuplot)
-\RequirePackage{gnuplot-lua-tikz}
+\RequirePackageIfPresent{gnuplot-lua-tikz}
 
 % Parrafo nuevo ya no tiene sangrado de la primera linea
-\RequirePackage{parskip}
+\RequirePackageIfPresent{parskip}
 
 % Importar data desde un archivo externo
-\RequirePackage{datatool}
+\RequirePackageIfPresent{datatool}
 
 \endinput
