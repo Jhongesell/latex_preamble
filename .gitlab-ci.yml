@@ -1,0 +1,4 @@
+image: listx/texlive:2016
+
+script:
+  - pdflatex  -file-line-error  --synctex=1 -interaction=nonstopmode "\input" main.tex
